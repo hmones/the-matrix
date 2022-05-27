@@ -6,6 +6,7 @@ import Start from './Pages/Start';
 import Question from './Pages/Question';
 import Explanation from './Pages/Explanation';
 import End from './Pages/End';
+import Results from './Pages/Results';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path='/question' element={<Question/>}/>
             <Route path='/explanation' element={<Explanation/>}/>
             <Route path='/end' element={<End/>}/>
+            <Route path='/results' element={<Results/>}/>
           </Routes>
         </MemoryRouter>
       </div>
