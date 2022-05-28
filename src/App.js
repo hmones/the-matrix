@@ -1,6 +1,6 @@
 import './App.css';
 import MatrixBackground from './Background';
-import React from 'react'
+import React, { useState } from 'react'
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import Start from './Pages/Start';
 import Question from './Pages/Question';
@@ -9,6 +9,12 @@ import End from './Pages/End';
 import Results from './Pages/Results';
 
 function App() {
+  const [isCorrect, setIsCorrect] = useState(false)
+  const [currentQuestion, setCurrentQuestion] = useState({id:null, description: "Empty Question", options: []})
+  const [answeredQuestions, setAnsweredQuestions] = useState([])
+  const [currentLevel, setCurrentLevel] = useState(1)
+  const [score, setScore] = useState(0)
+
   return (
     <>
       <MatrixBackground/>
@@ -25,10 +31,28 @@ function App() {
         <MemoryRouter>
           <Routes>
             <Route exact path='/' element={<Start/>}/>
-            <Route path='/question' element={<Question/>}/>
-            <Route path='/explanation' element={<Explanation/>}/>
-            <Route path='/end' element={<End/>}/>
-            <Route path='/results' element={<Results/>}/>
+            <Route path='/question' element={
+                <Question 
+                  setIsCorrect={setIsCorrect}
+                  currentQuestion={currentQuestion}
+                  setCurrentQuestion={setCurrentQuestion}
+                  currentLevel={currentLevel}
+                  setCurrentLevel={setCurrentLevel}
+                  score={score}
+                  setScore={setScore}
+                  setAnsweredQuestions={setAnsweredQuestions}
+                  answeredQuestions={answeredQuestions}
+                />
+              }/>
+            <Route path='/explanation' element={
+                <Explanation
+                  isCorrect={isCorrect} 
+                  currentQuestion={currentQuestion}
+                  answeredQuestions={answeredQuestions}
+                />
+              }/>
+            <Route path='/end' element={<End score={score}/>}/>
+            <Route path='/results' element={<Results score={score}/>}/>
           </Routes>
         </MemoryRouter>
       </div>
