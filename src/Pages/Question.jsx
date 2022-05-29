@@ -3,6 +3,7 @@ import { data } from '../Data/Data'
 import BluePill from '../Images/blue-pill.png';
 import Button from "../Components/Button";
 import { Link, useNavigate } from "react-router-dom";
+import Header from "../Components/Header";
 
 function Question ({setIsCorrect, currentQuestion, setCurrentQuestion, currentLevel, setCurrentLevel, score, setScore, setAnsweredQuestions, answeredQuestions}) {
     const navigate = useNavigate()
@@ -30,8 +31,7 @@ function Question ({setIsCorrect, currentQuestion, setCurrentQuestion, currentLe
     }, [])
 
     return <>
-        <img src="charachters/morpheous.png" style={{borderRadius: "50%", width: "87px"}} alt="morpheous"/>
-        <h1>Where is this picture?</h1>
+        <Header title="Where is this picture taken?"/>
         <img src={currentQuestion.imagePath} style={{width: "100%", border: "solid #00e700 3px", borderRadius: "10px"}} alt={currentQuestion.image}/>
         <br />
         <div style={{display: "inline-flex", paddingTop: "20px", paddingBottom: "20px", width: "100%"}}>

@@ -259,18 +259,10 @@ export const charachters = [
         image: "charachters/neo.png"
     },
     {
-        id: 6,
-        name: "Morpheous",
-        level: 6,
-        minScore: 11,
-        maxScore: 13,
-        image: "charachters/morpheous.png"
-    },
-    {
         id: 7,
         name: "Trinity",
         level: 6,
-        minScore: 14,
+        minScore: 11,
         maxScore: 16,
         image: "charachters/trinity.png"
     },
