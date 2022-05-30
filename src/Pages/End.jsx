@@ -28,7 +28,7 @@ function End ({score, answeredQuestions}) {
         return score > 6 ? "I took the red pill and now I'm " + charachter.name + " and I'm out of the matrix, join me now #taketheredpill"
         : "I took the red pill but unfortunately I was sent back to the matrix, I'm " + charachter.name + ". Try it yourself #taketheredpill"
     }
-    const url = "taketheredpill.com"
+    const url = "https://red-pill-challenge.com"
     useEffect(() => {
         if (answeredQuestions.length >= 9) {
             const record = doc(db, 'results/' + charachter.id)

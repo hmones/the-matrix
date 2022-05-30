@@ -16,21 +16,40 @@ function Start () {
         <Header title="Welcome to the Matrix"/>
         {showContent ? <>
                 <div style={{display: "flex", backgroundColor: 'black', padding: '20px', border: "#00ff00 solid 2px", borderRadius: "10px", textAlign: "left"}}>
-                    <Typewriter onInit={(typewriter) => {
-                        typewriter.typeString("<p>Are you ready to challenge your knowledge and discover who you are?</p>")
-                        .pauseFor(1000)
-                        .start()
-                        .typeString("<p>I will ask you a couple of questions</p>")
-                        .pauseFor(1000)
-                        .typeString("<p>Then it's all up to you ...</p>")
-                        .pauseFor(1000)
-                        .typeString("<h2>Take the red pill to proceed ...</h2>")
-                        .start()
-                        .stop()
-                    }} options={{
-                        cursor: "<span style='color:#00ff00'>__</span>",
-                        delay: 25
-                    }}/>
+                    <div style={{flex: 1, width: "100%"}}>
+                    <p>
+                        <Typewriter onInit={(typewriter) => {
+                            typewriter.typeString("Are you ready to challenge your knowledge and discover who you are?").start()
+                        }} options={{
+                            cursor: "<span style='color:#00ff00'>|</span>",
+                            delay: 25
+                        }}/>
+                    </p>
+                    <p>
+                        <Typewriter onInit={(typewriter) => {
+                            typewriter.pauseFor(3000).typeString("I will ask you a couple of questions").start()
+                        }} options={{
+                            cursor: "<span style='color:#00ff00'>|</span>",
+                            delay: 25
+                        }}/>
+                    </p>
+                    <p>
+                        <Typewriter onInit={(typewriter) => {
+                            typewriter.pauseFor(5000).typeString("Then it's all up to you").start()
+                        }} options={{
+                            cursor: "<span style='color:#00ff00'>|</span>",
+                            delay: 25
+                        }}/>
+                    </p>
+                    <h2>
+                        <Typewriter onInit={(typewriter) => {
+                            typewriter.pauseFor(7000).typeString("Take the red pill to proceed").start()
+                        }} options={{
+                            cursor: "<span style='color:#00ff00'>|</span>",
+                            delay: 25
+                        }}/>
+                    </h2>
+                    </div>
                 </div>
             </> : <></>}
         <br/><br/>
