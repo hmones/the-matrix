@@ -1,7 +1,7 @@
 import './App.css';
 import MatrixBackground from './Background';
 import React, { useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import Start from './Pages/Start';
 import Question from './Pages/Question';
 import Explanation from './Pages/Explanation';
@@ -28,7 +28,7 @@ function App() {
         color:'white',
         textAlign: 'center'
       }}>
-        <BrowserRouter>
+        <MemoryRouter>
           <Routes>
             <Route exact path='/' element={<Start/>}/>
             <Route path='/question' element={
@@ -54,7 +54,7 @@ function App() {
             <Route path='/end' element={<End score={score} answeredQuestions={answeredQuestions}/>}/>
             <Route path='/results' element={<Results score={score}/>}/>
           </Routes>
-        </BrowserRouter>
+        </MemoryRouter>
       </div>
     </>
   );
