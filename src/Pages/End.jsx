@@ -25,8 +25,8 @@ import { Link } from "react-router-dom";
 function End ({score, answeredQuestions}) {
     const [charachter] = useState(charachters.find((charachter) => (score <= charachter.maxScore && score >= charachter.minScore)))
     const shareText = () => {
-        return score > 6 ? "I took the red pill and now I'm " + charachter.name + " and I'm out of the matrix, join me now #taketheredpill"
-        : "I took the red pill but unfortunately I was sent back to the matrix, I'm " + charachter.name + ". Try it yourself #taketheredpill"
+        return score > 6 ? "I took the red pill. I'm " + charachter.name + " and I'm out of the matrix, join me now #redpillchallenge"
+        : "I took the red pill but unfortunately I was sent back to the matrix, I'm " + charachter.name + ". Try it yourself #redpillchallenge"
     }
     const url = "https://red-pill-challenge.com"
     useEffect(() => {
